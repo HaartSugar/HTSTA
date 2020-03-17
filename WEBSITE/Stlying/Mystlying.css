@@ -1,0 +1,27 @@
+.ABC {
+    text-align: center;
+}
+
+#RedP {
+    color: red;
+}
+
+#YellowB {
+    background-color: yellow;
+}
+
+#YellowBB {
+    background-color: yellow; color: blue;
+}
+
+#Yellow {
+    background-color: yellow;
+}
+
+.AAA {
+    text-align: center;
+}
+
+#ABB {
+    text-align: center;
+}
