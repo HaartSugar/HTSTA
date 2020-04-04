@@ -26,6 +26,25 @@
     text-align: center;
 }
 
+#Haha {
+    font-size: 90px;
+} 
+
 a:hover {
-    background-color: yellow;
+    background-color: royalblue;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+li {
+    display: inline;
+
+}
+
+ul {
+    background-color: lawngreen;
 }
