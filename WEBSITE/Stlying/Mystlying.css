@@ -31,7 +31,7 @@
 } 
 
 a:hover {
-    background-color: royalblue;
+    background-color: whitesmoke;
 }
 
 nav {
@@ -46,5 +46,5 @@ li {
 }
 
 ul {
-    background-color: lawngreen;
+    background-color: gray;
 }
