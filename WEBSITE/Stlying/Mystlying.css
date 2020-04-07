@@ -1,23 +1,35 @@
+/* Home page*/
+
 p {
     font-size: 90px;
 }
-a:hover {
-    background-color: whitesmoke;
-}
 
-nav {
+.navbar {
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: black;
+    height: 40px;
+    background-color:gray;
 }
 
-li {
+
+.navbar ul {
+    width: auto;
+}
+
+
+.navbar li {
     display: inline;
+    margin-right: 2%;
+    position: relative;
 
 }
 
-ul {
-    
+.navbar li a {
+    color:white;
+}
+
+.navbar li a:hover {
+    color: black;
 }
