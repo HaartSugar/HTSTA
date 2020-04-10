@@ -2,9 +2,6 @@
 body {
     background-color: blue;
 }
-p {
-    font-size: 90px;
-}
 .header {
     position: fixed;
     top: 0px;
@@ -45,10 +42,17 @@ p {
 .header ul li a:hover {
     color: brown;
 }
+
 .header .dropdown {
     float: right;
 }
+/*
 .header .dropdown .dropdown-content {
     display: none;
 }
-/* Contact page*/
+*/
+
+/* Home page */
+p {
+    font-size: 90px;
+}
