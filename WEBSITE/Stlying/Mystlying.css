@@ -1,6 +1,6 @@
 /* ALL NAVIGATION BARS*/
 body {
-    background-color: blue;
+    background-color: burlywood;
 }
 .header {
     position: fixed;
@@ -60,6 +60,11 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
 }
+.first {
+    padding-top: 40px;
+}
 .sentences {
     font-size: 40px;
+    display: flex;
+    text-align: justify;
 }
