@@ -84,7 +84,7 @@ h2 {
 }
 /* Product page */
 img {
-    width: 400px;
+    width: 300px;
 }
 
 #fullpage {
@@ -94,6 +94,10 @@ img {
     }
 #text h1 {
     padding-top: 40px;
+}
+.allproducts {
+    display: flex;
+    background-color: black;
 }
 .Products {
     text-align: center;
