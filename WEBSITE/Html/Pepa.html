@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
     <style>
-    #fullpage {
+#fullpage {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -28,11 +28,28 @@
     border: solid 1px red;
     align-items: center;
     margin: 10px;
+    background-color: green;
+    transition: background-color 1s;
     }
+
+.product:hover {
+    background-color: brown;
+}
+
+a {
+    background-color: chartreuse;
+}
+a:hover {
+    font-size: larger;
+}
  
 img {
-    width: 400px;
+    width: 200px;
+    transition: height 10s;
     }
+img:hover {
+    width: 400px;
+}
     </style>
 </head>
 <body>
@@ -40,31 +57,31 @@ img {
         <div>
             <h1 id="text">
                 The following are Pepa products:
+                <a href="bla">This is a link</a>
             </h1>
         </div>
      
         <div class="allproducts">
             
             <div class="product">
-                <img src="../Images/pepa1.png" alt="pepa1" class="pepa1">
-                <h4 class="par1">Pepa and George</h4>
-                <h1 class="par1">Price: 80</h1>
+                <img src="../Images/Pepa/pepa1.png" alt="pepa1" class="pepa1">
+                <p class="par1">Pepa and George</p>
+                <p class="par1">80 &euro;</p>
             </div> 
      
             <div class="product">
-                <img src="../Images/pepa2.jpg" alt="pepa2" class="pepa1">
-                <h4 class="par1">Pepe in costume</h4>
-                <h1 class="par1">Price: 40</h1>
+                <img src="../Images/Pepa/pepa2.jpg" alt="pepa2" class="pepa1">
+                <p class="par1">Pepe in costume</p>
+                <p class="par1">40 &euro;</p>
             </div> 
      
-            
             <div class="product">
-                <img src="../Images/pepaalone.png" alt="pepa3" class="pepa1">
+                <img src="../Images/Pepa/pepa2.jpg" alt="pepa3" class="pepa1">
                 <div class="soldout">
-                <p>This item is out of stock</p>
+                    <p>This item is out of stock</p>
                 </div>
-                <h4 class="par1"> Standalone pepa</h4>
-                <h1 class="par1">Price: 25</h1>
+                <p class="par1"> Standalone pepa</p>
+                <p class="par1">25 &euro;</p>
             </div>
         </div>
     </div>

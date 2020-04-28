@@ -68,3 +68,38 @@ body {
     display: flex;
     text-align: justify;
 }
+
+/* About page */
+.aboutus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+h2 {
+    text-align: center;
+}
+.aboutmepic {
+
+}
+/* Product page */
+img {
+    width: 400px;
+}
+
+#fullpage {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+#text h1 {
+    padding-top: 40px;
+}
+.Products {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px red;
+    align-items: center;
+    margin: 10px;
+    }
