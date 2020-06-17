@@ -20,7 +20,7 @@ header {
 }
 
 .logo {
-    line-height: 70px;
+    line-height: 65px;
 }
 .logo h1 {
     font-size: 38px;
@@ -34,7 +34,15 @@ header {
     letter-spacing: 4px;
     font-size: 20px;
     margin: 0 10px;
+}
+.wrapper a:not(.active) {
     color: #fff;
+}
+.wrapper a:hover {
+    color: yellow;
+}
+.active {
+    color: black;
 }
 .banner-area {
     width: 100%;
@@ -52,26 +60,6 @@ header {
     font-family: poppins;
     text-transform: uppercase;
     color: lightyellow;
-}
-/* Home page */
-.content-area-in-home {
-    width: 100%;
-    position: absolute;
-    top: 570px;
-    background-color: #ddd;
-    height: 1500px;
-}
-.content-area-in-home h2 {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    letter-spacing: 4px;
-    padding-top: 30px;
-    font-size: 40px;
-    margin: 0;
-}
-.content-area-in-home p {
-    padding: 2% 0;
-    font-family: monospace;
-    line-height: 30px;
 }
 
 @media screen and (max-width: 500px) {
@@ -95,52 +83,60 @@ header {
         top: 0px;
     }
 }
-
-/* Contact Page */
-.content-area-in-contact {
+.content-area {
     width: 100%;
     position: absolute;
     top: 570px;
     background-color: #ddd;
-    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.content-area-in-contact h2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.content-area h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     letter-spacing: 4px;
     padding-top: 30px;
     font-size: 40px;
     margin: 0;
 }
-.content-area-in-contact p {
+.content-area p {
     padding: 2% 0;
     font-family: monospace;
     line-height: 30px;
+}
+
+.dropdown-content {
+    display: none;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Home page */
+
+
+
+
+
+
+
+/* Contact Page */
+
+#ContactUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
 }
 
 /* About Page */
-.content-area-in-about {
-    width: 100%;
-    position: absolute;
-    top: 570px;
-    background-color: #ddd;
-    height: 1500px;
-}
-.content-area-in-about h2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 4px;
-    padding-top: 30px;
-    font-size: 40px;
-    margin: 0;
-}
-.content-area-in-about p {
-    padding: 2% 0;
-    font-family: monospace;
-    line-height: 30px;
-}
-.content-area-in-about .teams {
+
+.content-area .teams {
     display: flex;
 }
-.content-area-in-about .teams .everyone {
+.content-area .teams .everyone {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -150,42 +146,23 @@ header {
     background-color: whitesmoke;
     transition: background-color 1s;
 }
-.content-area-in-about .teams .everyone:hover {
+.content-area .teams .everyone:hover {
     background-color: brown;
 }
-.content-area-in-about .teams .everyone img {
+.content-area .teams .everyone img {
     width: 200px;
     transition: height 1s;
 }
-.content-area-in-about .teams .everyone img:hover {
+.content-area .teams .everyone img:hover {
     width: 400px
 }
 /* Products Page */
-.content-area-in-products {
-    width: 100%;
-    position: absolute;
-    top: 570px;
-    background-color: #ddd;
-    height: 1500px;
-}
-.content-area-in-products h2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 4px;
-    padding-top: 30px;
-    font-size: 40px;
-    margin: 0;
-}
-.content-area-in-products p {
-    padding: 2% 0;
-    font-family: monospace;
-    line-height: 30px;
-}
-.content-area-in-products .allproducts {
+.content-area .allproducts {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.content-area-in-products .Products {
+.content-area .Products {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -195,14 +172,14 @@ header {
     background-color: whitesmoke;
     transition: background-color 1s;
 }
-.content-area-in-products .allproducts .Products:hover {
+.content-area .allproducts .Products:hover {
     background-color: brown;
 }
-.content-area-in-products .allproducts .Products img {
+.content-area .allproducts .Products img {
     width: 200px;
     transition: height 1s;
 }
-.content-area-in-products .allproducts .Products img:hover {
+.content-area .allproducts .Products img:hover {
     width: 400px
 }
 .Products p {
