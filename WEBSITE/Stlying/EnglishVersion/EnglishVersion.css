@@ -7,7 +7,7 @@ body {
 }
 .wrapper {
     display: flex;
-    margin: 0 auto;
+    margin: 0;
     justify-content: space-between;
     align-items: center;
 }
@@ -62,27 +62,7 @@ header {
     color: lightyellow;
 }
 
-@media screen and (max-width: 500px) {
-    .wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    nav {
-        flex-direction: column;
-        display: flex;
-    }
-    header {
-        width: 20%;
-        background-color: red;
-    }
-    .banner-area {
-        left: 70px;
-        top: 0px;
-    }
-}
+
 .content-area {
     width: 100%;
     position: absolute;
@@ -112,6 +92,7 @@ header {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 
 /* Home page */
@@ -184,4 +165,31 @@ header {
 }
 .Products p {
     width: 200px;
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    nav {
+        flex-direction: column;
+        display: flex;
+        background-color: blue;
+    }
+    header {
+        width: 20%;
+        height: 100%;
+        background-color: red;
+    }
+    .content-area {
+        position: relative;
+        transform: translateX(20%);
+    }
+    .banner-area {
+        top: 0%;
+    }
 }
