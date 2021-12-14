@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>联系</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?=time(); ?>'>
     <script src='main.js'></script>
 </head>
+
 <body>
+<?php
+include_once("naviagationCh.php");
+navbar("ContactC");
+?>
     <div class="box-area">
-        <header>
-            <div class="wrapper">
-                <div class="logo">
-                    <h1>SPL</h1>
-                </div>
-                <nav>
-                    <a href="./HomeC.html">首页</a>
-                    <a class="active" href="./ContactC.html">联系</a>
-                    <a href="./ProductsC.html">产品</a>
-                    <a href="./AboutC.html">关于</a>
-                </nav>
-                <div class="dropdown">
-                    <a href="../ChineseVersion/ContactC.html">中文</a>
-                    <div class="dropdown-content">
-                        <a href="../EnglishVersion/Contact.html">English</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+
         <div class="banner-area">
             <h2>Pandora Box</h2>
         </div>
@@ -39,14 +27,14 @@
             </div>
             <form action="Home.html" id="ContactUs">
                 <label>First Name</label>
-                <input type="text"  placeholder="Your name..">
+                <input type="text" placeholder="Your name..">
                 <label>Last Name</label>
                 <input type="text" placeholder="Your last name..">
                 <label>Country</label>
                 <select>
-                <option>Australia</option>
-                <option>Canada</option>
-                <option>USA</option>
+                    <option>Australia</option>
+                    <option>Canada</option>
+                    <option>USA</option>
                 </select>
                 <label>Birthday</label>
                 <input type="date">
@@ -56,4 +44,5 @@
         </div>
     </div>
 </body>
+
 </html>

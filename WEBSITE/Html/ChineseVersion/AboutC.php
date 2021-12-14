@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>关于</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?=time(); ?>'>
     <script src='main.js'></script>
 </head>
+
 <body>
+<?php
+include_once("naviagationCh.php");
+navbar("AboutC");
+?>
     <div class="box-area">
-        <header>
-            <div class="wrapper">
-                <div class="logo">
-                    <h1>SPL</h1>
-                </div>
-                <nav>
-                    <a href="./HomeC.html">首页</a>
-                    <a href="./ContactC.html">联系</a>
-                    <a href="./ProductsC.html">产品</a>
-                    <a class="active" href="./AboutC.html">关于</a>
-                </nav>
-                <div class="dropdown">
-                    <a href="../ChineseVersion/AboutC.html">中文</a>
-                    <div class="dropdown-content">
-                        <a href="../EnglishVersion/About.html">English</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+
         <div class="banner-area">
             <h2>Pandora Box</h2>
         </div>
@@ -67,4 +55,5 @@
         </div>
     </div>
 </body>
+
 </html>

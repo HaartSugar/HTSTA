@@ -5,30 +5,16 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Home</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?=time(); ?>'>
     <script src='main.js'></script>
 </head>
 <body>
+<?php
+include_once("naviagation.php");
+navbar("Home");
+?>
     <div class="box-area">
-        <header>
-            <div class="wrapper">
-                <div class="logo">
-                    <h1>SPL</h1>
-                </div>
-                <nav>
-                    <a class="active" href="./Home.html">Home</a>
-                    <a href="./Contact.html">Contact</a>
-                    <a href="./Products.html">Products</a>
-                    <a href="./About.html">About</a>
-                </nav>
-                <div class="dropdown">
-                    <a href="../EnglishVersion/Home.html">English</a>
-                    <div class="dropdown-content">
-                        <a href="../ChineseVersion/HomeC.html">中文</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        
         <div class="banner-area">
             <h2>Pandora Box</h2>
         </div>
