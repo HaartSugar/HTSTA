@@ -12,8 +12,8 @@
 
 <body>
     <?php
-    include_once("naviagationCh.php");
-    navbar("ProductsC");
+    include_once("../navbar.php");
+    navbar(["首页","关于","联系","产品"],["Home","About","Contact","Products"],"langCN",3);
     ?>
     <div class="box-area">
 
@@ -29,20 +29,20 @@
 
                 <?php
                 //$fileToRead = fopen("cars.txt","r");
-                $handle = fopen("myProductsC.txt", "r") or die("File not found");
+                $handle = fopen("../allP.txt", "r") or die("File not found");
 
                 while (($line = fgets($handle)) !== false) {
                     $piecesArray = explode("/", $line);
+                    if (count($piecesArray) == 7) {
                 ?>
-                    <div class="Products">
-                        <a href="ShowdetailC.php?ProductId=<?= $piecesArray[3] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
-                        <p><?= $piecesArray[1] ?></p>
-                        <p><?= $piecesArray[2] ?></p>
+                        <div class="Products">
+                            <a href="ShowdetailC.php?ProductId=<?= $piecesArray[5] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
+                            <p><?= $piecesArray[2] ?></p>
+                            <p><?= $piecesArray[3] ?></p>
 
-                    </div>
+                        </div>
                 <?php
-
-
+                    }
                 }
                 fclose($handle);
                 ?>

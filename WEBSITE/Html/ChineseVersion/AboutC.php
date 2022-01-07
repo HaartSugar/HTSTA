@@ -12,8 +12,8 @@
 
 <body>
 <?php
-include_once("naviagationCh.php");
-navbar("AboutC");
+include_once("../navbar.php");
+navbar(["首页","关于","联系","产品"],["Home","About","Contact","Products"],"langCN",1);
 ?>
     <div class="box-area">
 

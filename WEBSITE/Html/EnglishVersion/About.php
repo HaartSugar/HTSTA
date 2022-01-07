@@ -13,8 +13,8 @@
 <body>
     <?php
     
-    include_once("naviagation.php");
-    navbar("About");
+    include_once("../navbar.php");
+navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",1);
     ?>
     <div class="box-area">
 

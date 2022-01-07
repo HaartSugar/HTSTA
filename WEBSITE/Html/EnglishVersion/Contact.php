@@ -13,8 +13,8 @@
 <body>
 
     <?php
-    include_once("naviagation.php");
-    navbar("Contact");
+    include_once("../navbar.php");
+    navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",2);
     ?>
     <div class="banner-area">
         <h2>Pandora Box</h2>

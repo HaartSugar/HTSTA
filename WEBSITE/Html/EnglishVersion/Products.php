@@ -7,13 +7,12 @@
     <title>Products</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?= time(); ?>'>
-    <script src='main.js'></script>
 </head>
 
 <body>
     <?php
-    include_once("naviagation.php");
-    navbar("Products");
+    include_once("../navbar.php");
+    navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",3);
     ?>
     <div class="box-area">
 
@@ -29,16 +28,16 @@
 
                 <?php
                 //$fileToRead = fopen("cars.txt","r");
-                $handle = fopen("Myproduts.txt", "r") or die("File not found");
+                $handle = fopen("../allP.txt", "r") or die("File not found");
 
                 while (($line = fgets($handle)) !== false) {
                     $piecesArray = explode("/", $line);
-                    if (count($piecesArray) == 4) {
+                    if (count($piecesArray) == 7) {
                 ?>
                         <div class="Products">
-                            <a href="Showdetail.php?ProductId=<?= $piecesArray[3] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
+                            <a href="Showdetail.php?ProductId=<?= $piecesArray[4] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
                             <p><?= $piecesArray[1] ?></p>
-                            <p><?= $piecesArray[2] ?></p>
+                            <p><?= $piecesArray[3] ?></p>
 
                         </div>
                 <?php
