@@ -14,7 +14,7 @@
     <?php
     
     include_once("../navbar.php");
-navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",1);
+navbar(["Home","About","Contact","Products","Resister","Login"],["Home","About","Contact","Products","Resister","Login"],"langEn",1);
     ?>
     <div class="box-area">
 

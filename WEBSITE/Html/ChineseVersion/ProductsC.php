@@ -13,7 +13,7 @@
 <body>
     <?php
     include_once("../navbar.php");
-    navbar(["首页","关于","联系","产品"],["Home","About","Contact","Products"],"langCN",3);
+    navbar(["首页","关于","联系","产品","注册","登录"],["Home","About","Contact","Products","Resister","Login"],"langCN",3);
     ?>
     <div class="box-area">
 

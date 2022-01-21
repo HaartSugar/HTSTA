@@ -1,16 +1,10 @@
 product1.jpg/Truffle, scampi, green apple/松露，虾，青苹果/40€/1/asdfdsaw/虾
-product2.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/2/wdfdsfsdf/虾
-product3.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/3/wdfdsfsdf/虾
-product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/4/wdfdsfsdf/虾
+product2.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/10€/2/wdfdsfsdf/虾
+product3.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/20€/3/wdfdsfsdf/虾
+product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/50€/4/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/5/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/6/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/7/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/8/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/9/wdfdsfsdf/虾
 product4.jpg/Risotto with Cime di rapa/萝卜青菜烩饭/40€/10/wdfdsfsdf/虾
-
-
-
-
-
-

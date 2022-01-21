@@ -12,7 +12,7 @@
 <body>
     <?php
     include_once("../navbar.php");
-    navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",3);
+    navbar(["Home","About","Contact","Products","Resister","Login"],["Home","About","Contact","Products","Resister","Login"],"langEn",3);
     ?>
     <div class="box-area">
 

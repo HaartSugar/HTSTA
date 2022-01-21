@@ -14,7 +14,7 @@
 
     <?php
     include_once("../navbar.php");
-    navbar(["Home","About","Contact","Products"],["Home","About","Contact","Products"],"langEn",2);
+    navbar(["Home","About","Contact","Products","Resister","Login"],["Home","About","Contact","Products","Resister","Login"],"langEn",2);
     ?>
     <div class="banner-area">
         <h2>Pandora Box</h2>
