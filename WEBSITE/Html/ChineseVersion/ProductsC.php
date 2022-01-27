@@ -36,7 +36,7 @@
                     if (count($piecesArray) == 7) {
                 ?>
                         <div class="Products">
-                            <a href="ShowdetailC.php?ProductId=<?= $piecesArray[5] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
+                            <a href="ShowdetailC.php?ProductId=<?= $piecesArray[4] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
                             <p><?= $piecesArray[2] ?></p>
                             <p><?= $piecesArray[3] ?></p>
 

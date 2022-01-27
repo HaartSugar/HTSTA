@@ -12,7 +12,7 @@
 <body>
     <?PHP
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products","Resister","Login"], ["Home", "About", "Contact", "Products","Resister","Login"], "langEn", 3);
+    navbar(["Home", "About", "Contact", "Products", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister", "Login"], "langEn", 3);
 
 
     if (isset($_GET["ProductId"])) {
@@ -27,11 +27,12 @@
 
 
     ?>
-    
+
                     <div class="Products">
                         <a href="Showdetail.php?ProductId=<?= $piecesArray[4] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
                         <p><?= $piecesArray[1] ?></p>
                         <p><?= $piecesArray[3] ?></p>
+                        <p><?= $piecesArray[5] ?></p>
 
                     </div>
     <?php
