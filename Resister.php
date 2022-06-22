@@ -1,10 +1,4 @@
-<?php
-include_once("../START.PHP");
-
-?>
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -27,7 +21,7 @@ include_once("../START.PHP");
 
     <?php
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister", "Login"], "langEn", 4);
+    navbar(["Home", "About", "Contact", "Products", "Resister","Login"], ["Home", "About", "Contact", "Products", "Resister","Login"], "langEn", 4);
 
     ?>
     <form method="post">
@@ -53,31 +47,26 @@ include_once("../START.PHP");
             </ul>
         </fieldset>
         <?php
-        if (isset($_POST["username"], $_POST["password0"], $_POST["password1"])) {
+        if (isset($_POST["username"], $_POST["password0"])) {
             if ($_POST["password0"] != $_POST["password1"]) {
-                
-                print "<script>alert('Password not the same')</script>";
-                
+                print("Password isn't same");
                 die();
-
             }
-            $sqlStatement = $connection->prepare("SELECT * FROM Users where UserName=?");
-            $sqlStatement->bind_param("s", $_POST["username"]);
-            $sqlStatement->execute();
-            $result = $sqlStatement->get_result();
-            $userExist = $result->num_rows;
-
-            if ($userExist == 0) {
-                $hashPassword = password_hash($_POST["password0"], PASSWORD_DEFAULT);
-
-                $sqlStatement2 = $connection->prepare("INSERT INTO Users(UserName,UserPassword) VALUES (?,?) ");
-                $sqlStatement2->bind_param("ss", $_POST["username"], $hashPassword);
-                $sqlStatement2->execute();
-                $_SESSION['shoppingCart']=[];//Creat shoppingcart
-                $_SESSION['userLoggedIn']=true;
-            }else {
-                print "<script>alert('User are all exist')</script>";
+            
+            /* () $myfile = fopen("../data.txt", "r") or die("Unable to open the file!");
+            while (($line = fgets($myfile)) !== false) {
+                $userNameandPass = explode(" ", $line);
+                //print($userNameandPass[0]);
+                if ($_POST["username"] == $userNameandPass[0]) {
+                    die("Invalid Username");
+                }
             }
+            fclose($myfile);
+            $myfile = fopen("../data.txt", "a") or die("Unable to open the file!");
+
+            fwrite($myfile, $_POST["username"] . " " . $_POST["password0"] . "\n");
+            fclose($myfile);
+        */
         }
         ?>
     </form>

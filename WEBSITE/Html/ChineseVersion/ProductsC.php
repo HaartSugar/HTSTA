@@ -12,6 +12,15 @@
 
 <body>
     <?php
+    $host = "localhost";
+    $user = "root";
+    $psw = "";
+    $portNo = 3306;
+    $dbName = "lishaopeng";
+    $connection = new mysqli($host, $user, $psw, $dbName, $portNo);
+    $sqlStatement = $connection->prepare("SELECT * FROM Products natural join Descriptions where languagesID=2");
+    $sqlStatement->execute();
+    $result = $sqlStatement->get_result();
     include_once("../navbar.php");
     navbar(["首页","关于","联系","产品","注册","登录"],["Home","About","Contact","Products","Resister","Login"],"langCN",3);
     ?>
@@ -29,22 +38,32 @@
 
                 <?php
                 //$fileToRead = fopen("cars.txt","r");
-                $handle = fopen("../allP.txt", "r") or die("File not found");
 
-                while (($line = fgets($handle)) !== false) {
-                    $piecesArray = explode("/", $line);
-                    if (count($piecesArray) == 7) {
+
+                $count = 0;
+                while ($row = $result->fetch_assoc()) {
+                    if ($count == 0) {
                 ?>
                         <div class="Products">
-                            <a href="ShowdetailC.php?ProductId=<?= $piecesArray[4] ?>"><img src="../../Images/Products/<?= $piecesArray[0] ?>"></a>
-                            <p><?= $piecesArray[2] ?></p>
-                            <p><?= $piecesArray[3] ?></p>
+                            <img src="../../Images/Products/<?= $row["ProductsImage"] ?>">
+                            <p><?= $row['ProductsName'] ?></p>
+                            <p><?= $row["ProductsPrice"] ?></p>
+                            <p><?= $row["DescText"] ?></p>
+                        
 
                         </div>
                 <?php
                     }
                 }
-                fclose($handle);
+                $count++;
+
+                if ($count == 3) {
+
+                    print("</div>");
+
+                    $count = 0;
+                }
+
                 ?>
 
             </div>

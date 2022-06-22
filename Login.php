@@ -1,7 +1,3 @@
-<?php
-include_once("../START.PHP");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +19,7 @@ include_once("../START.PHP");
     <?php
     include_once("../navbar.php");
     navbar(["Home", "About", "Contact", "Products", "Resister","Login"], ["Home", "About", "Contact", "Products", "Resister","Login"], "langEn", 5);
+
     ?>
 <form method="POST">
         <fieldset>
@@ -45,26 +42,24 @@ include_once("../START.PHP");
     </form>
     <?php
     if (isset($_POST['username'],$_POST['password0'])) {
-        $sqlStatement = $connection->prepare("SELECT * FROM Users where UserName=?");
-        $sqlStatement->bind_param("s", $_POST["username"]);
-        $sqlStatement->execute();
-        $result = $sqlStatement->get_result();
-        $userExist = $result->num_rows;
+        $myfile = "../data.txt";
+        $userExist= fopen($myfile,"r");
+        $username = false;
+            while (($userGet =fgets($userExist))) {
 
-        if ($userExist == 1) {
-            $row=$result->fetch_assoc();
-            if (password_verify($_POST['password0'],$row['UserPassword'])) {
-                $_SESSION['UserName']=$row['UserName'];
-                $_SESSION['shoppingCart']=[];//Creat shoppingcart
-                $_SESSION['userLoggedIn']=true;
-
-                print "<script>alert('YOU ARE LOGIN')</script>";
-            }else {
-                print "<script>alert('Password does not match')</script>";
+                $userNameandPass = explode(" ",$userGet);
+                    if ($_POST["username"] == $userNameandPass[0] && trim($_POST["password0"]) == trim($userNameandPass[1])) {
+                        $username=true;
+                        print("Welcome ".$userNameandPass[0]);
+                    }
+                
+                    
+                            
             }
-        }else {
-            print "<script>alert('User does not exist')</script>";
-        }
+            if ($username==false) {
+                print("pas or name it's wrong");
+            }
+                fclose($userExist);
     }
     ?>
 
