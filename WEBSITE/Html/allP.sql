@@ -49,11 +49,9 @@ CREATE TABLE descriptions (
     ProductsID int not null,
     languagesID int not null,
     DescText VARCHAR(200),
-     PRIMARY KEY (descriptionsID),
-     foreign key (ProductsID) REFERENCES Products(ProductsID),
-     foreign key (languagesID) REFERENCES languages(languagesID)
-    
-    
+    PRIMARY KEY (descriptionsID),
+    foreign key (ProductsID) REFERENCES Products(ProductsID),
+    foreign key (languagesID) REFERENCES languages(languagesID)
 );
 
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Truffle, scampi, green apple",1,1,"asdfdsaw");

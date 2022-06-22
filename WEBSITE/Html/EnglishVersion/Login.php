@@ -22,7 +22,7 @@ include_once("../START.PHP");
 <body>
     <?php
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products", "Resister","Login"], ["Home", "About", "Contact", "Products", "Resister","Login"], "langEn", 5);
+    navbar(["Home", "About", "Contact", "Products","shoppingCart", "Resister","Login"], ["Home", "About", "Contact", "Products","shoppingCart", "Resister","Login"], "langEn", 6);
     ?>
 <form method="POST">
         <fieldset>
@@ -59,6 +59,8 @@ include_once("../START.PHP");
                 $_SESSION['userLoggedIn']=true;
 
                 print "<script>alert('YOU ARE LOGIN')</script>";
+                print '<script>window.location.href = "Home.php";</script>';
+                die();
             }else {
                 print "<script>alert('Password does not match')</script>";
             }

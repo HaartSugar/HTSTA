@@ -13,7 +13,14 @@ function navbar($navText, $Links, $lang, $activeLink)
             </div>
             <nav>
                 <?php
-                for ($i = 0; $i < count($navText); $i++) {
+                if($_SESSION['userLoggedIn']){
+                    $lastA = count($navText) -2;
+                }else{
+                    $lastA = count($navText);
+                }
+                
+                for ($i = 0; $i < $lastA; $i++) {
+
 
                     if ($lang == "langEn") {
                         $Link = "../EnglishVersion/" . $Links[$i] . ".php";
@@ -24,14 +31,24 @@ function navbar($navText, $Links, $lang, $activeLink)
                 ?>
 
                     <a <?php
-                    if ($activeLink==$i) {
-                        print("class='active'");
-                    }
-                    ?> href="<?= $Link ?>"><?= $navText[$i] ?></a>
+                        if ($activeLink == $i) {
+                            print("class='active'");
+                        }
+                        ?> href="<?= $Link ?>"><?= $navText[$i] ?></a>
                 <?php
                 }
                 ?>
 
+                <?php
+                if ($_SESSION['userLoggedIn']) {
+                ?>
+                    <form method="POST" hidden id="LogoutForm">
+                        <input type="text" name="LOGOUT">
+                    </form>
+                    <a onclick="document.getElementById('LogoutForm').submit();" href="#">Logout</a>
+                <?php
+                }
+                ?>
 
 
             </nav>

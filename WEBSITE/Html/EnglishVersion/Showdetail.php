@@ -1,3 +1,8 @@
+<?php 
+include_once("../START.PHP");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +17,7 @@
 <body>
     <?PHP
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister", "Login"], "langEn", 3);
+    navbar(["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"], ["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"], "langEn", 3);
 
 
     if (isset($_GET["ProductId"])) {

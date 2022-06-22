@@ -38,6 +38,7 @@ if (isset($_POST["buyID"], $_POST["quantityProduct"])) {
     <title>Products</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?= time(); ?>'>
+
 </head>
 
 <body>
@@ -48,7 +49,7 @@ if (isset($_POST["buyID"], $_POST["quantityProduct"])) {
     $result = $sqlStatement->get_result();
 
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister", "Login"], "langEn", 3);
+    navbar(["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"], ["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"], "langEn", 3);
     ?>
     <div class="box-area">
 

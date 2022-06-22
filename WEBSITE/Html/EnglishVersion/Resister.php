@@ -27,7 +27,7 @@ include_once("../START.PHP");
 
     <?php
     include_once("../navbar.php");
-    navbar(["Home", "About", "Contact", "Products", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister", "Login"], "langEn", 4);
+    navbar(["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"], ["Home", "About", "Contact", "Products", "Resister","shoppingCart", "Login"], "langEn", 5);
 
     ?>
     <form method="post">
@@ -75,6 +75,10 @@ include_once("../START.PHP");
                 $sqlStatement2->execute();
                 $_SESSION['shoppingCart']=[];//Creat shoppingcart
                 $_SESSION['userLoggedIn']=true;
+
+                print "<script>alert('YOU ARE LOGIN')</script>";
+                print '<script>window.location.href = "Home.php";</script>';
+                die();
             }else {
                 print "<script>alert('User are all exist')</script>";
             }

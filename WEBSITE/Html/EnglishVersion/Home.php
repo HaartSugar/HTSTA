@@ -1,3 +1,6 @@
+<?php 
+include_once("../START.PHP");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 <body>
 <?php
 include_once("../navbar.php");
-navbar(["Home","About","Contact","Products","Resister","Login"],["Home","About","Contact","Products","Resister","Login"],"langEn",0);
+navbar(["Home","About","Contact","Products","shoppingCart","Resister","Login"],["Home","About","Contact","Products","shoppingCart","Resister","Login"],"langEn",0);
 ?>
     <div class="box-area">
         
