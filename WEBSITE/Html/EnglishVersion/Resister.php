@@ -70,7 +70,9 @@ include_once("../START.PHP");
             if ($userExist == 0) {
                 $hashPassword = password_hash($_POST["password0"], PASSWORD_DEFAULT);
 
-                $sqlStatement2 = $connection->prepare("INSERT INTO Users(UserName,UserPassword) VALUES (?,?) ");
+
+
+                $sqlStatement2 = $connection->prepare("INSERT INTO Users(UserName,UserPassword,UserAdmin) VALUES (?,?,0) ");
                 $sqlStatement2->bind_param("ss", $_POST["username"], $hashPassword);
                 $sqlStatement2->execute();
                 $_SESSION['shoppingCart']=[];//Creat shoppingcart

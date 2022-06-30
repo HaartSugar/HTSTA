@@ -1,28 +1,56 @@
+<?php
+include_once("../START.PHP");
+
+if (isset($_POST["buyID"], $_POST["quantityProduct"])) {
+
+    if ($_SESSION['userLoggedIn']) {
+
+
+
+        if (!is_numeric($_POST["buyID"])) {
+            die();
+        }
+
+        if ($_POST["quantityProduct"] < 1 || $_POST["quantityProduct"] > 10) {
+            die();
+        }
+
+
+        if (isset($_SESSION["shoppingCart"][$_POST["buyID"]])) {
+            $_SESSION["shoppingCart"][$_POST["buyID"]] = $_SESSION["shoppingCart"][$_POST["buyID"]] + $_POST["quantityProduct"];
+            //unset($_SESSION["shoppingCart"][$_POST["buyID"]]);
+        } else {
+            $_SESSION["shoppingCart"] += [$_POST["buyID"] => $_POST["quantityProduct"]];
+        }
+    } else {
+        print "<script>alert('You are not logged in')</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>产品</title>
+    <title>Products</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../../Stlying/MyCssCode.css?t<?= time(); ?>'>
-    <script src='main.js'></script>
+
 </head>
 
 <body>
     <?php
-    $host = "localhost";
-    $user = "root";
-    $psw = "";
-    $portNo = 3306;
-    $dbName = "lishaopeng";
-    $connection = new mysqli($host, $user, $psw, $dbName, $portNo);
+
     $sqlStatement = $connection->prepare("SELECT * FROM Products natural join Descriptions where languagesID=2");
     $sqlStatement->execute();
     $result = $sqlStatement->get_result();
+
+  
     include_once("../navbar.php");
-    navbar(["首页","关于","联系","产品","注册","登录"],["Home","About","Contact","Products","Resister","Login"],"langCN",3);
+    navbar(["首页","关于","联系","产品","物品栏","注册","登录"],["Home", "About", "Contact", "Products","shoppingCart", "Resister", "Login"],"langCN",3);
     ?>
     <div class="box-area">
 

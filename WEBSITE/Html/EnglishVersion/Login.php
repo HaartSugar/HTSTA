@@ -55,6 +55,11 @@ include_once("../START.PHP");
             $row=$result->fetch_assoc();
             if (password_verify($_POST['password0'],$row['UserPassword'])) {
                 $_SESSION['UserName']=$row['UserName'];
+
+                $_SESSION['admin']=($row['UserAdmin']==1);
+                
+
+
                 $_SESSION['shoppingCart']=[];//Creat shoppingcart
                 $_SESSION['userLoggedIn']=true;
 

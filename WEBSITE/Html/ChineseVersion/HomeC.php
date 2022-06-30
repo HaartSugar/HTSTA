@@ -1,3 +1,6 @@
+<?php 
+include_once("../START.PHP");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +17,7 @@
 <?php
 
 include_once("../navbar.php");
-navbar(["首页","关于","联系","产品","注册","登录"],["Home","About","Contact","Products","Resister","Login"],"langCN",0);
+navbar(["首页", "关于", "联系", "产品", "物品栏", "注册", "登录"], ["Home", "About", "Contact", "Products", "shoppingCart", "Resister", "Login"],"langCN",0);
 ?>
     <div class="box-area">
 

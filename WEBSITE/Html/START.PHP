@@ -5,6 +5,12 @@ if(!isset($_SESSION['userLoggedIn'])){
     $_SESSION['userLoggedIn'] = false;
 }
 
+if(!isset($_SESSION['admin'])){
+    $_SESSION['admin'] = false;
+
+}
+
+
 if(isset($_POST["LOGOUT"])){
     session_unset();
     session_destroy();

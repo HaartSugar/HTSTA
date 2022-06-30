@@ -13,12 +13,12 @@ function navbar($navText, $Links, $lang, $activeLink)
             </div>
             <nav>
                 <?php
-                if($_SESSION['userLoggedIn']){
-                    $lastA = count($navText) -2;
-                }else{
+                if ($_SESSION['userLoggedIn']) {
+                    $lastA = count($navText) - 2;
+                } else {
                     $lastA = count($navText);
                 }
-                
+
                 for ($i = 0; $i < $lastA; $i++) {
 
 
@@ -48,6 +48,18 @@ function navbar($navText, $Links, $lang, $activeLink)
                     <a onclick="document.getElementById('LogoutForm').submit();" href="#">Logout</a>
                 <?php
                 }
+                if ($_SESSION['admin']) {
+                ?>
+                    <a <?php
+                        if ($activeLink == 10) {
+                            print("class='active'");
+                        }
+                        ?> href="admin.php">admin Page</a>
+                <?php
+
+                }
+
+
                 ?>
 
 

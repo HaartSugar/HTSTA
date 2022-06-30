@@ -1,8 +1,8 @@
 <?php
 include_once("../START.PHP");
 if($_SESSION['userLoggedIn'] == false){
-    print "<script>alert('You are not logged in')</script>";
-    print '<script>window.location.href = "Login.php";</script>';
+    print "<script>alert('你未登录')</script>";
+    print '<script>window.location.href = "LoginC.php";</script>';
 }
 ?>
 
@@ -20,7 +20,7 @@ if($_SESSION['userLoggedIn'] == false){
 <?php
     
     include_once("../navbar.php");
-navbar(["Home","About","Contact","Products","shoppingCart","Resister","Login"],["Home","About","Contact","Products","shoppingCart","Resister","Login"],"langEn",4);
+    navbar(["Home","About","Contact","Products","shoppingCart","Resister","Login"],["Home","About","Contact","Products","shoppingCart","Resister","Login"],"langCn",4);
     ?>
 
     <div class="content-area">
@@ -29,7 +29,7 @@ navbar(["Home","About","Contact","Products","shoppingCart","Resister","Login"],[
 $totalOrder = 0;
 
 foreach($_SESSION["shoppingCart"] as $IDproduct => $quantity){
-    $sqlStatement2 = $connection->prepare("SELECT * FROM Products natural join Descriptions where languagesID=1 AND ProductsID=?");
+    $sqlStatement2 = $connection->prepare("SELECT * FROM Products natural join Descriptions where languagesID=2 AND ProductsID=?");
     $sqlStatement2->bind_param("s", $IDproduct);
     $sqlStatement2->execute();
     $result2 = $sqlStatement2->get_result();

@@ -5,11 +5,15 @@ use lishaopeng;
 
 
 
+
+
 create table Users(
     UserId int NOT NULL AUTO_INCREMENT,
     UserName VARCHAR(30) UNIQUE,
     UserPassword VARCHAR(255),
-     Primary Key (UserId)
+     Primary Key (UserId),
+    UserAdmin int NOT NULL
+
 );
 
 CREATE TABLE Products (
@@ -54,7 +58,7 @@ CREATE TABLE descriptions (
     foreign key (languagesID) REFERENCES languages(languagesID)
 );
 
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Truffle, scampi, green apple",1,1,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Truffle, scampi, green apple",1,1,"wdfdsfsdf");
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Risotto with Cime di rapa",2,1,"wdfdsfsdf");
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Risotto with Cime di rapa",3,1,"wdfdsfsdf");
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Risotto with Cime di rapa",4,1,"wdfdsfsdf");
@@ -65,12 +69,12 @@ INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("R
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Risotto with Cime di rapa",9,1,"wdfdsfsdf");
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("Risotto with Cime di rapa",10,1,"wdfdsfsdf");
 INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",1,2,"asdfdsaw");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",2,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",3,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",4,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",5,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",6,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",7,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",8,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",9,2,"wdfdsfsdf");
-INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",10,2,"wdfdsfsdf");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",2,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",3,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",4,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",5,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",6,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",7,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",8,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",9,2,"asdfdsaw");
+INSERT INTO descriptions(ProductsName,ProductsID,languagesID,DescText) VALUES("chine",10,2,"asdfdsaw");

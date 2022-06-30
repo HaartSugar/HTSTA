@@ -1,4 +1,10 @@
+<?php
+include_once("../START.PHP");
+
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -18,7 +24,7 @@
 <body>
     <?php
     include_once("../navbar.php");
-    navbar(["首页","关于","联系","产品","注册","登录"], ["Home", "About", "Contact", "Products", "Resister","Login"], "langCN", 4);
+    navbar(["首页", "关于", "联系", "产品", "物品栏", "注册", "登录"], ["Home", "About", "Contact", "Products", "shoppingCart", "Resister", "Login"], "langCN", 5);
 
     ?>
     <form method="post">
@@ -30,11 +36,11 @@
                     <input type="text" name="username">
                 </li>
                 <li>
-                    <label>密码:</label>
+                    <label>密码</label>
                     <input type="password" name="password0">
                 </li>
                 <li>
-                    <label>重复密码:</label>
+                    <label>重新密码</label>
                     <input type="password" name="password1">
                 </li>
                 <button type="submit" name="Register">
@@ -44,24 +50,37 @@
             </ul>
         </fieldset>
         <?php
-        if (isset($_POST["username"], $_POST["password0"])) {
+        if (isset($_POST["username"], $_POST["password0"], $_POST["password1"])) {
             if ($_POST["password0"] != $_POST["password1"]) {
-                print("Password isn't same");
+                
+                print "<script>alert('密码不是一样的')</script>";
+                
                 die();
-            }
-            $myfile = fopen("../data.txt", "r") or die("Unable to open the file!");
-            while (($line = fgets($myfile)) !== false) {
-                $userNameandPass = explode(" ", $line);
-                //print($userNameandPass[0]);
-                if ($_POST["username"] == $userNameandPass[0]) {
-                    die("Invalid Username");
-                }
-            }
-            fclose($myfile);
-            $myfile = fopen("../data.txt", "a") or die("Unable to open the file!");
 
-            fwrite($myfile, $_POST["username"] . " " . $_POST["password0"] . "\n");
-            fclose($myfile);
+            }
+            $sqlStatement = $connection->prepare("SELECT * FROM Users where UserName=?");
+            $sqlStatement->bind_param("s", $_POST["username"]);
+            $sqlStatement->execute();
+            $result = $sqlStatement->get_result();
+            $userExist = $result->num_rows;
+
+            if ($userExist == 0) {
+                $hashPassword = password_hash($_POST["password0"], PASSWORD_DEFAULT);
+
+
+
+                $sqlStatement2 = $connection->prepare("INSERT INTO Users(UserName,UserPassword,UserAdmin) VALUES (?,?,0) ");
+                $sqlStatement2->bind_param("ss", $_POST["username"], $hashPassword);
+                $sqlStatement2->execute();
+                $_SESSION['shoppingCart']=[];//Creat shoppingcart
+                $_SESSION['userLoggedIn']=true;
+
+                print "<script>alert('你已登录')</script>";
+                print '<script>window.location.href = "HomeC.php";</script>';
+                die();
+            }else {
+                print "<script>alert('用户名没有')</script>";
+            }
         }
         ?>
     </form>

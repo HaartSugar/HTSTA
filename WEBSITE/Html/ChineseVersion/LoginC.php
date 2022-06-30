@@ -1,3 +1,7 @@
+<?php
+include_once("../START.PHP");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +22,10 @@
 <body>
     <?php
     include_once("../navbar.php");
-    navbar(["首页","关于","联系","产品","注册","登录"],["Home","About","Contact","Products","Resister","Login"],"langCN",5);
+    navbar(["首页", "关于", "联系", "产品", "物品栏", "注册", "登录"], ["Home", "About", "Contact", "Products", "shoppingCart", "Resister", "Login"], "langCN", 6);
 
     ?>
-<form method="POST">
+    <form method="POST">
         <fieldset>
             <legend>登录</legend>
             <ul>
@@ -33,36 +37,46 @@
                     <label>密码</label>
                     <input type="password" name="password0">
                 </li>
-                
+
                 <button type="submit" name="login">
-                    Login
+                    登录
                 </button>
             </ul>
-        </fieldset>   
+        </fieldset>
     </form>
     <?php
-    if (isset($_POST['username'],$_POST['password0'])) {
-        $myfile = "../data.txt";
-        $userExist= fopen($myfile,"r");
-        $username = false;
-            while (($userGet =fgets($userExist))) {
+    if (isset($_POST['username'], $_POST['password0'])) {
+        $sqlStatement = $connection->prepare("SELECT * FROM Users where UserName=?");
+        $sqlStatement->bind_param("s", $_POST["username"]);
+        $sqlStatement->execute();
+        $result = $sqlStatement->get_result();
+        $userExist = $result->num_rows;
 
-                $userNameandPass = explode(" ",$userGet);
-                    if ($_POST["username"] == $userNameandPass[0] && trim($_POST["password0"]) == trim($userNameandPass[1])) {
-                        $username=true;
-                        print("Welcome ".$userNameandPass[0]);
-                    }
-                
-                    
-                            
+        if ($userExist == 1) {
+            $row = $result->fetch_assoc();
+            if (password_verify($_POST['password0'], $row['UserPassword'])) {
+                $_SESSION['UserName'] = $row['UserName'];
+
+                $_SESSION['admin'] = ($row['UserAdmin'] == 1);
+
+
+
+                $_SESSION['shoppingCart'] = []; //Creat shoppingcart
+                $_SESSION['userLoggedIn'] = true;
+
+                print "<script>alert('你已登录')</script>";
+                print '<script>window.location.href = "HomeC.php";</script>';
+                die();
+            } else {
+                print "<script>alert('密码不对')</script>";
             }
-            if ($username==false) {
-                print("pas or name it's wrong");
-            }
-                fclose($userExist);
+        } else {
+            print "<script>alert('用户名没有')</script>";
+        }
     }
     ?>
 
-</form>
+    </form>
 </body>
+
 </html>
