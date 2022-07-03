@@ -1,7 +1,14 @@
 <?php 
 if(isset($_POST["name"], $_POST["price"], $_POST["descEN"], $_POST["descCN"])){
     //insert into the product table
+    $sqlStatement2 = $connection->prepare("SELECT * FROM Products natural join Descriptions where languagesID=1 AND ProductsID=?");
+    $sqlStatement2->bind_param("s", $IDproduct);
+    $sqlStatement2->execute();
+    $result2 = $sqlStatement2->get_result();
 
+    $row = $result2->fetch_assoc();
+
+    $totalOrder = $totalOrder + ($row["ProductsPrice"] * $quantity);
     //insert into desc table en posts
 
     //insert into desc table cn posts
