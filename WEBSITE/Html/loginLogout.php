@@ -14,14 +14,19 @@
     if (!isset($_SESSION["UserLogged"])) {
         $_SESSION["UserLogged"] = false;
     }
+
+
     if (isset($_POST["Login"])) {
         print("clicked");
         $_SESSION["UserLogged"] = true;
     }
+
+
     if (isset($_POST["LogOut"])) {
         print("Out");
         $_SESSION["UserLogged"] = false;
     }
+    
     if ($_SESSION["UserLogged"]) {
 
     ?>
